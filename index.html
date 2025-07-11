@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KACHBOUT BOULERBAH - Web Developer</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" type="image/png">
+  <style>
+    :root {
+      --primary-color: #1e3a8a;
+      --accent-color: #3b82f6;
+      --bg-color: #f0f4f8;
+      --text-color: #1f2937;
+      --card-bg: #ffffff;
+      --transition-speed: 0.4s;
+    }* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  animation: fadeInDown 1s ease forwards;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.8s forwards;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  gap: 30px;
+}
+
+section {
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 10px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+.project {
+  margin-bottom: 15px;
+}
+
+.project h3 {
+  margin-bottom: 5px;
+  color: var(--accent-color);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #e2e8f0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #1d4ed8;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  <header>
+    <h1>KACHBOUT BOULERBAH</h1>
+    <p>Front-End Web Developer</p>
+  </header>  <main>
+    <section class="reveal">
+      <h2>About Me</h2>
+      <p>I am a highly motivated and skilled front-end web developer from Djelfa, Algeria. With a strong foundation in HTML, CSS, and JavaScript, I specialize in building responsive, accessible, and user-friendly websites. I am passionate about web development, problem-solving, and continuously learning new technologies and frameworks to stay ahead in the ever-evolving tech world.</p>
+    </section><section class="reveal">
+  <h2>Skills</h2>
+  <ul>
+    <li>HTML5 & Semantic Markup</li>
+    <li>CSS3 & Responsive Design</li>
+    <li>JavaScript (ES6+)</li>
+    <li>Basic Git & GitHub</li>
+    <li>Web Performance Optimization</li>
+  </ul>
+</section>
+
+<section class="reveal">
+  <h2>Projects</h2>
+  <div class="project">
+    <h3>Personal Portfolio Website</h3>
+    <p>A responsive portfolio showcasing my work and contact information using HTML, CSS, and vanilla JavaScript.</p>
+  </div>
+  <div class="project">
+    <h3>Landing Page Template</h3>
+    <p>A clean, minimal landing page with responsive layout, developed with Flexbox and modern CSS techniques.</p>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Languages</h2>
+  <ul>
+    <li>Arabic - Excellent</li>
+    <li>English - Good</li>
+    <li>French - Intermediate</li>
+  </ul>
+</section>
+
+<section class="reveal">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:lord.nimo14@gmail.com">lord.nimo14@gmail.com</a></p>
+  <p>Location: Djelfa, Algeria</p>
+</section>
+
+  </main>  <footer>
+    &copy; 2025 KACHBOUT BOULERBAH. Built with ❤ and HTML/CSS/JS.
+  </footer>  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const isDark = root.style.getPropertyValue('--bg-color') === '#1f2937';
+
+      if (!isDark) {
+        root.style.setProperty('--bg-color', '#1f2937');
+        root.style.setProperty('--text-color', '#f0f4f8');
+        root.style.setProperty('--card-bg', '#374151');
+      } else {
+        root.style.setProperty('--bg-color', '#f0f4f8');
+        root.style.setProperty('--text-color', '#1f2937');
+        root.style.setProperty('--card-bg', '#ffffff');
+      }
+    }
+
+    const sections = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script></body>
+</html>
